@@ -6,3 +6,35 @@ inspired by the typography and night-sky background of
 
 The page is responsive, contains no tracking, and keeps its greeting visible
 without JavaScript.
+
+Click or tap any part of the greeting to reveal the anniversary surprise. The
+celebration also works with a keyboard and respects reduced-motion preferences.
+
+## Development
+
+Use Node.js 26 LTS and the pnpm version pinned in `package.json`.
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
+```
+
+```sh
+pnpm check
+pnpm build
+pnpm preview
+```
+
+The site uses Vite, strict TypeScript, plain CSS, and self-hosted Source Sans Pro.
+Confetti loads only when the greeting is activated. Dependencies are pinned in
+the lockfile, and Dependabot checks for updates weekly.
+
+## Deployment
+
+Pushing to `main` runs formatting, lint, type, build, and production dependency
+checks. GitHub Actions publishes only `dist/` to GitHub Pages. Actions are pinned
+to commit hashes and deployment uses GitHub's short-lived credentials.
+
+The custom domain is configured by `public/CNAME`. Porkbun DNS points the apex
+and `www` to `adityaarunsinghal.github.io`. Registrar credentials belong in the
+operating system's keychain, never in this repository.

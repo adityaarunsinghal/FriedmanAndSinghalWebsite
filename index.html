@@ -13,56 +13,20 @@
     <meta property="og:title" content="Hi P&amp;C and J&amp;A" />
     <meta property="og:description" content="A little hello from Friedman &amp; Singhal." />
     <meta property="og:url" content="https://friedmanandsinghal.com/" />
-    <style>
-      :root {
-        color-scheme: dark;
-        font-family: "Source Sans Pro", "Segoe UI", sans-serif;
-        color: #fff;
-        background: #091128;
-        font-synthesis: none;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-      }
-      * { box-sizing: border-box; }
-      body { margin: 0; min-width: 240px; }
-      main {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        place-items: center;
-        min-height: 100vh;
-        min-height: 100svh;
-        padding: 2rem 1.5rem;
-      }
-      h1 {
-        width: min(100%, 46rem);
-        margin: 0;
-        padding: clamp(2.25rem, 8vw, 4rem) 0.75rem;
-        border-block: 1px solid rgb(255 255 255 / 72%);
-        font-size: clamp(1.7rem, 5.2vw, 3.25rem);
-        font-weight: 600;
-        line-height: 1.5;
-        letter-spacing: normal;
-        text-align: center;
-        text-wrap: balance;
-        background: radial-gradient(ellipse, rgb(0 0 0 / 12%), transparent 70%);
-      }
-      .names { white-space: nowrap; }
-      canvas {
-        position: fixed;
-        inset: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-      }
-      ::selection { color: #091128; background: #c5d5ff; }
-    </style>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/main.ts"></script>
   </head>
   <body>
-    <canvas aria-hidden="true"></canvas>
-    <main>
-      <h1>Hi <span class="names">P&amp;C</span> and <span class="names">J&amp;A</span></h1>
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <main aria-live="polite" aria-atomic="true">
+      <h1 id="greeting" class="greeting-title">
+        <button id="greeting-button" type="button">
+          Hi <span class="names">P&amp;C</span> and <span class="names">J&amp;A</span>
+        </button>
+      </h1>
+      <h1 id="celebration" class="greeting-title" tabindex="-1" hidden>
+        Happy Anniversary!!!
+      </h1>
     </main>
   </body>
 </html>
