@@ -30,6 +30,8 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Check formatting, lint, and types
         run: pnpm check
+      - name: Check the anniversary date boundaries
+        run: pnpm test
       - name: Build static site
         run: pnpm build
       - name: Check production dependencies

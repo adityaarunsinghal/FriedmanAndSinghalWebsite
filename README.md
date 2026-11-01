@@ -9,6 +9,8 @@ without JavaScript.
 
 Click or tap any part of the greeting to reveal the anniversary surprise. The
 celebration also works with a keyboard and respects reduced-motion preferences.
+On November 1, 2026 in New York, it says "Happy Anniversary!!!". On every other
+date it says "Wedding details will be here soon!".
 
 ## Development
 
@@ -21,6 +23,7 @@ pnpm dev
 
 ```sh
 pnpm check
+pnpm test
 pnpm build
 pnpm preview
 ```
@@ -31,9 +34,10 @@ the lockfile, and Dependabot checks for updates weekly.
 
 ## Deployment
 
-Pushing to `main` runs formatting, lint, type, build, and production dependency
-checks. GitHub Actions publishes only `dist/` to GitHub Pages. Actions are pinned
-to commit hashes and deployment uses GitHub's short-lived credentials.
+Pushing to `main` runs formatting, lint, type, date-boundary tests, build, and
+production dependency checks. GitHub Actions publishes only `dist/` to GitHub
+Pages. Actions are pinned to commit hashes and deployment uses GitHub's
+short-lived credentials.
 
 The custom domain is configured by `public/CNAME`. Porkbun DNS points the apex
 and `www` to `adityaarunsinghal.github.io`. Registrar credentials belong in the

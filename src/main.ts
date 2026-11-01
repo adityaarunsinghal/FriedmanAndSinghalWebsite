@@ -1,3 +1,4 @@
+import { getCelebrationMessage } from "./celebration";
 import { startParticles } from "./particles";
 
 const canvas = document.querySelector<HTMLCanvasElement>("#particles");
@@ -12,6 +13,7 @@ button?.addEventListener(
   async () => {
     if (!greeting || !celebration) return;
 
+    celebration.textContent = getCelebrationMessage();
     greeting.hidden = true;
     celebration.hidden = false;
     celebration.focus({ preventScroll: true });
